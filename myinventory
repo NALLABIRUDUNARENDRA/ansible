@@ -1,0 +1,13 @@
+s1 ansible_host=172.31.94.234
+s2 ansible_host=172.31.92.106
+
+[webservers]
+s1
+s2
+
+[allservers:children]
+webservers
+
+[allservers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/tmp/ansible.pem
